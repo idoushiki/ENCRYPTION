@@ -16,7 +16,7 @@ int main(void)
 	while(1){
 		
 		
-	printf("１暗号化 ２復号化 ３設定 Esc終了\r");
+	printf("１暗号化 ２復号化 Esc終了\r");
 
 	a=getch();
 	
@@ -35,19 +35,23 @@ int main(void)
 	char  fname[64];//入力したファイル名
 	char fname2[64];//.txtがついたファイル名
 	char fname3[64];//拡張子付きファイル名
-	conf=fopen("config.txt","r");
 	
-	fscanf(conf,"%s %d %s",b,&num,p);//拡張子とファイル数とファイルパス読み込み
+	
+	conf=fopen("config.txt","a");
 	fclose(conf);	
+	
+		system("config.txt");
+			
+	conf=fopen("config.txt","r");
+	fscanf(conf,"%s %d %s %s",b,&num,p,fname);//拡張子とファイル数とファイルパス読み込み
+	fclose(conf);	
+	
+			printf("パスワードを入力してください\n");
+		scanf("%d",&k);
 	
 	
 	if(a==49){
 		
-		printf("暗号化したいファイル名を入力して下さい\n");
-		
-		scanf("%s",fname);
-		printf("パスワードを入力してください\n");
-		scanf("%d",&k);
 		
 		for(i=1;i<=num;i++){
 	
@@ -92,12 +96,7 @@ int main(void)
 				}
 	
 if(a==50){
-		
-		printf("復号化したいファイル名を入力してください\n");
-		scanf("%s",fname);
-		
-		printf("パスワードを入力してください\n");
-		scanf("%d",&k);
+	
 		
 		fscanf(conf,"%s",b);
 		fclose(conf);
@@ -143,34 +142,7 @@ if(a==50){
 
 		}/*a==2*/
 		
-	if(a==51){
-		
-		char kaku[3];
-		int kazu;
-		
-		printf("拡張子を入力してください\n");
-		
-		conf=fopen("config.txt","w");
-		scanf("%s",kaku);
-		
-		printf("暗号化したいファイル数を入力してください\n");
-		scanf("%d",&kazu);
-		a=0;
-		printf("暗号化したいファイルの場所を変更しますか？１はい  ２いいえ\n");
-		a=getch();
-		if(a==49){
-		
-		
-		printf("暗号化したいファイルの場所を入力してください\n");
-		scanf("%s",p);
-		
-		fprintf(conf,".%s %d %s",kaku,kazu,p);
-		fclose(conf);
-		}
-		a=0;
-				
-		return 0;
-		}//a==51
+	
 		}//angou
 
 void close(){
@@ -180,4 +152,3 @@ fclose(bf);
 a=0;
 
 }
-
