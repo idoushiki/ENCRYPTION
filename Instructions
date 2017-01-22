@@ -1,0 +1,41 @@
+This software can encrypt any files.
+
+
+
+How to use ENCRYPTION
+
+
+
+You select files you wanna encrypt.
+Make files same name.
+Then,filenames wil be like this↓
+************************************
+a (1).png
+
+a (2).png
+
+a (3).png
+.
+.
+.
+.
+a (x).png
+**********************************
+
+You are now ready for encryption.
+
+
+When you start this software, Notepad will start up.
+Please enter the information in the order of extension, number,  file location, filename.
+Example********************************
+
+.png 4 C:\abc\ a
+
+***************************************
+↑It means encrypt files that  files from "a (1).png" to  "a (4).png" in the folder "abc".
+
+
+Next,you enter password.
+
+
+Then, encryption is complete.
